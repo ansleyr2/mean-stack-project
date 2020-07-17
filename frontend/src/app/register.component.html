@@ -1,0 +1,60 @@
+<mat-card>
+  <form class="example-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width">
+      <input
+        matInput
+        style="width: 350px;"
+        placeholder="First Name"
+        formControlName="firstName"
+        [ngClass]="{ error: isValid('firstName') }"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input
+        matInput
+        style="width: 350px;"
+        placeholder="Last Name"
+        formControlName="lastName"
+        [ngClass]="{ error: isValid('lastName') }"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input
+        matInput
+        style="width: 350px;"
+        type="email"
+        placeholder="Email"
+        formControlName="email"
+        [ngClass]="{ error: isValid('email') }"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input
+        matInput
+        style="width: 350px;"
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+        [ngClass]="{ error: isValid('password') }"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input
+        matInput
+        style="width: 350px;"
+        type="password"
+        placeholder="Confirm Password"
+        formControlName="confirmPassword"
+        [ngClass]="{ error: isValid('confirmPassword') }"
+      />
+    </mat-form-field>
+    <br />
+    <span *ngIf="form.errors?.mismatchedFields">Passwords do not match</span>
+    <br />
+    <button mat-raised-button color="primary">Register</button>
+  </form>
+</mat-card>

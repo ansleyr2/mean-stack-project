@@ -1,0 +1,28 @@
+<mat-card>
+  <!-- <form class="example-form" [formGroup]="form" (ngSubmit)="onSubmit()"> -->
+  <mat-form-field class="example-full-width">
+    <input
+      [(ngModel)]="loginData.email"
+      matInput
+      style="width: 350px;"
+      type="email"
+      placeholder="Email"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input
+      matInput
+      style="width: 350px;"
+      type="password"
+      placeholder="Password"
+      [(ngModel)]="loginData.password"
+    />
+  </mat-form-field>
+
+  <br />
+  <!-- <span *ngIf="form.errors?.mismatchedFields">Passwords do not match</span> -->
+  <br />
+  <button mat-raised-button color="primary" (click)="login()">Login</button>
+  <!-- </form> -->
+</mat-card>
